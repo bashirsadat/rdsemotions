@@ -37,11 +37,12 @@ def get_prediction_proba(docx):
     results = pipe_lr.predict_proba([docx])
     return results
 def main():
-    st.title("Emotion Classifier Interface")
-    menu = ["Home","Monitor","About"]
+    
+    menu = ["Home","About"]
     choice = st.sidebar.selectbox("Menu",menu)
     if choice == "Home":
-        st.subheader("Home-Emotion In Text")
+        st.title("Emotion Classifier Interface")
+        # st.subheader("Home-Emotion In Text")
         with st.form(key='emotion_clf_form'):
             raw_text = st.text_area("Type Here")
             submit_text = st.form_submit_button(label='Submit')
@@ -71,13 +72,15 @@ def main():
                 st.altair_chart(fig,use_container_width=True)
 
 
-    elif choice == "Monitor":
-        st.subheader("Monitor App")
-        st.write("Under Construction")
+    # elif choice == "Monitor":
+    #     st.subheader("Monitor App")
+    #     st.write("Under Construction")
     else:
         st.subheader("About")
-        
-        st.write("Under Construction")
+        st.write("With a hybrid profile of data science and computer science, I’m pursuing a career in AI-driven firms. I believe in dedication, discipline, and creativity towards my job, which will be helpful in meeting your firm's requirements as well as my personal development.")
+        st.write("Check out this project's [Github](https://github.com/bashirsadat/rdsemotions)")
+        st.write(" My [Linkedin](https://www.linkedin.com/in/saadaat/)")
+        st.write("See my other projects [LinkTree](https://linktr.ee/saadaat)")
 
 
 if __name__ == '__main__':
